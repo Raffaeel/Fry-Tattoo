@@ -1,0 +1,186 @@
+
+body {
+  background-color: rgb(10, 9, 9);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Links */
+a {
+  color: rgba(251, 248, 247, 0.911);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(201, 156, 240, 0.912);
+}
+
+/* Cabeçalho / Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 175px;
+  margin-top: 15px;
+  background-color: black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: auto;
+  box-shadow:
+    0 0 10px rgb(77, 45, 151),
+    0 0 20px rgb(105, 54, 188),
+    0 0 40px rgb(178, 100, 234),
+    0 0 80px rgb(199, 119, 233);
+  flex-wrap: wrap;
+  max-width: 95%;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.container img {
+  width: 125px;
+  height: 105px;
+  border-radius: 25px;
+  flex-shrink: 0;
+}
+
+/* Títulos */
+h1 {
+  color: rgba(251, 248, 247, 0.911);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+}
+
+h1:hover {
+  color: rgba(186, 125, 239, 0.912);
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+  color: rgb(239, 237, 240);
+  margin-top: 8%;
+  text-align: center;
+}
+
+h3:hover {
+  color: rgba(186, 125, 239, 0.912);
+}
+
+/* Galeria Tattoo */
+.tatoo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Imagens Tattoo */
+.tatoo > img {
+  min-width: 200px;
+  max-width: 220px;
+  height: 390px;
+  background-color: black;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(192, 97, 230, 0.936);
+  color: white;
+  text-align: center;
+  flex-shrink: 0;
+  filter: grayscale(100%);
+  transform: perspective(600px) rotateY(-15deg);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.tatoo > img:hover {
+  filter: grayscale(0%);
+  transform: perspective(600px) rotateY(0deg);
+}
+
+/* ======== RESPONSIVIDADE ======== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .container {
+    gap: 80px;
+    padding: 15px;
+  }
+
+  .container img {
+    width: 110px;
+    height: 90px;
+  }
+
+  .tatoo > img {
+    max-width: 200px;
+    height: 340px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* impede quebra de linha */
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    gap: 2px;
+    padding: 0px;
+    max-width: 95%;
+    overflow-x: auto; /* evita quebra caso o conteúdo seja maior */
+  }
+
+ .container img {
+    width: 55px;
+    height: 55px;
+  }
+
+.container a {
+    font-size: 14px;
+    margin: 0 6px;
+  }
+
+ 
+  a {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .tatoo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tatoo > img {
+    width: 90%;
+    max-width: 250px;
+    height: auto;
+  }
+
+ 
+  }
+
+
+
+
+
+
+
+
+
