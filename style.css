@@ -1,283 +1,1479 @@
-/* === BASE === */
+/* =========================================================
+   FRY TATTOO
+   IDENTIDADE VISUAL
+   PRETO + BRANCO + ROXO
+   ========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
+   ========================================================= */
+
+:root {
+    --preto: #050505;
+    --preto-2: #090909;
+    --preto-3: #101010;
+
+    --branco: #f5f5f5;
+    --cinza: #b8b8b8;
+    --cinza-escuro: #707070;
+
+    --roxo: #8b2cff;
+    --roxo-claro: #b464ff;
+    --roxo-escuro: #5514a8;
+
+    --borda-roxa: rgba(139, 44, 255, 0.65);
+
+    --brilho-roxo:
+        0 0 6px rgba(139, 44, 255, 0.65),
+        0 0 18px rgba(139, 44, 255, 0.30);
+
+    --transicao: 0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-  background-color: rgb(10, 9, 9);
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(101, 32, 155, 0.12),
+            transparent 35%
+        ),
+        var(--preto);
+
+    color: var(--branco);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
 }
 
-/* === HEADER / MENU === */
+
+img,
+video {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+header {
+    width: 100%;
+
+    padding: 25px 0 0;
+
+    position: relative;
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   CONTAINER DO HEADER
+   ========================================================= */
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 125px;
-  margin-top: 18px;
-  background-color: black;
-  border-radius: 15px;
-  padding: 15px;
+    width: calc(100% - 80px);
 
- 
+    max-width: 1320px;
 
-  
-  
-  /* NEON MAIS FINO E DELICADO */
-  box-shadow:
-    0 0 5px rgb(77, 45, 151),
-    0 0 10px rgb(105, 54, 188),
-    0 0 20px rgb(178, 100, 234);
-   
+    min-height: 115px;
+
+    margin: 0 auto;
+
+    padding: 10px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    border: 1px solid var(--borda-roxa);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 6px rgba(111, 24, 217, 0.6),
+        0 0 18px rgba(139, 44, 255, 0.25);
+
+    backdrop-filter: blur(10px);
 }
 
-.container img {
-  width: 110px;
-  height: 90px;
-  border-radius: 20px;
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo-link {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
 }
 
-.container a {
-  color: rgba(251, 248, 247, 0.95);
-  font-weight: bold;
-  font-size: 17px;
-  text-decoration: none;
-  transition: 0.25s;
-  font-family: 'Roboto', sans-serif;
+
+.logo-link img {
+    width: 105px;
+
+    height: 90px;
+
+    object-fit: contain;
+
+    transition: var(--transicao);
+
+    filter:
+        drop-shadow(
+            0 0 4px
+            rgba(255, 255, 255, 0.12)
+        );
 }
 
-.container a:hover {
-  color: rgba(201, 156, 240, 0.95);
-  text-shadow: 0 0 6px rgba(178, 100, 234, 0.6); /* neon leve no texto */
+
+.logo-link:hover img {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(139, 44, 255, 0.7)
+        )
+        drop-shadow(
+            0 0 15px
+            rgba(139, 44, 255, 0.35)
+        );
 }
 
-/* === REELS === */
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 55px;
+
+    margin-left: auto;
+}
+
+
+nav a {
+    position: relative;
+
+    color: var(--branco);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:
+        color var(--transicao),
+        text-shadow var(--transicao);
+}
+
+
+/* Linha abaixo do menu */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--roxo);
+
+    box-shadow:
+        0 0 6px var(--roxo);
+
+    transition: width var(--transicao);
+}
+
+
+nav a:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 8px
+        rgba(139, 44, 255, 0.7);
+}
+
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÃO AGENDAR DO HEADER
+   ========================================================= */
+
+.header-agendar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 13px 21px;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    border: 1px solid var(--roxo);
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 0 6px
+        rgba(139, 44, 255, 0.35);
+
+    transition: var(--transicao);
+}
+
+
+.header-agendar:hover {
+    background: var(--roxo);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 10px
+        rgba(139, 44, 255, 0.75),
+        0 0 25px
+        rgba(139, 44, 255, 0.35);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    width: calc(100% - 80px);
+
+    max-width: 1320px;
+
+    min-height: 650px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px 55px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(92, 38, 140, 0.10),
+            transparent 60%
+        ),
+        var(--preto);
+
+    border-left: 1px solid
+        rgba(139, 44, 255, 0.15);
+
+    border-right: 1px solid
+        rgba(139, 44, 255, 0.15);
+}
+
+
+/* =========================================================
+   BRILHO AMBIENTE DO HERO
+   ========================================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    left: -220px;
+
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: var(--roxo);
+
+    opacity: 0.08;
+
+    filter: blur(110px);
+
+    pointer-events: none;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -220px;
+
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: var(--roxo-claro);
+
+    opacity: 0.07;
+
+    filter: blur(110px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TÍTULO DO HERO
+   ========================================================= */
+
+.hero h1 {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+
+    margin-bottom: 28px;
+
+    color: #f4f4f4;
+
+    font-size:
+        clamp(3.2rem, 7vw, 6.8rem);
+
+    line-height: 0.91;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 2px #ffffff,
+        0 0 12px
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   TEXTO DO HERO
+   ========================================================= */
+
+.hero p {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin-bottom: 35px;
+
+    color: var(--cinza);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+   ========================================================= */
+
+.hero-buttons {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+}
+
+
+.hero-buttons a {
+    min-width: 190px;
+
+    padding: 14px 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    border: 1px solid var(--roxo);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition: var(--transicao);
+}
+
+
+.hero-buttons a:first-child {
+    background:
+        rgba(139, 44, 255, 0.10);
+
+    box-shadow:
+        0 0 8px
+        rgba(139, 44, 255, 0.45);
+}
+
+
+.hero-buttons a:hover {
+    background: var(--roxo);
+
+    box-shadow:
+        0 0 10px
+        rgba(139, 44, 255, 0.8),
+        0 0 25px
+        rgba(139, 44, 255, 0.4);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SEÇÃO DOS VÍDEOS
+   ========================================================= */
+
 .reels-section {
-  padding: 40px 20px;
-  margin-top: 3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: calc(100% - 80px);
+
+    max-width: 1320px;
+
+    margin: 0 auto;
+
+    padding: 70px 30px 100px;
+
+    background: var(--preto);
 }
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.reels-section h2 {
+    margin-bottom: 45px;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* pequena linha roxa */
+
+.reels-section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+
+    height: 2px;
+
+    margin: 15px auto 0;
+
+    background: var(--roxo);
+
+    box-shadow:
+        0 0 8px var(--roxo);
+}
+
+
+/* =========================================================
+   GRID DOS VÍDEOS
+   ========================================================= */
 
 .reels-scroll {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 35px;
-  width: 100%;
-  max-width: 1150px;
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
 }
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
 
 .reel-card {
-  width: 100%;
-  background-color: black;
-  border-radius: 20px;
-  padding: 12px;
-  box-shadow: 0 0 10px rgba(192, 97, 230, 0.6); /* mais suave */
-  color: white;
-  text-align: center;
+    position: relative;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #050505;
+
+    border: 1px solid
+        rgba(139, 44, 255, 0.55);
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 7px
+        rgba(139, 44, 255, 0.25);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
+
+
+.reel-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(139, 44, 255, 0.9);
+
+    box-shadow:
+        0 0 10px
+        rgba(139, 44, 255, 0.6),
+        0 0 28px
+        rgba(139, 44, 255, 0.22);
+}
+
+
+/* =========================================================
+   VÍDEO
+   ========================================================= */
 
 .reel-card video {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 15px;
+    width: 100%;
+
+    height: 360px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #080808;
 }
 
-/* === FOOTER === */
+
+/* =========================================================
+   TÍTULO DO CARD
+   ========================================================= */
+
+.reel-card h3 {
+    margin-top: 20px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO DO CARD
+   ========================================================= */
+
+.reel-card p {
+    margin-top: 8px;
+
+    margin-bottom: 24px;
+
+    color: var(--roxo-claro);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LINHA DECORATIVA DO CARD
+   ========================================================= */
+
+.reel-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 10px;
+
+    width: 35px;
+
+    height: 2px;
+
+    background: var(--roxo);
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 7px var(--roxo);
+}
+
+
+/* =========================================================
+   CHAMADA PARA GALERIA
+   ========================================================= */
+
+.gallery-call {
+    width: calc(100% - 80px);
+
+    max-width: 1320px;
+
+    min-height: 450px;
+
+    margin: 0 auto;
+
+    padding: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(5, 5, 5, 0.88),
+            rgba(5, 5, 5, 0.95)
+        ),
+        radial-gradient(
+            circle at center,
+            rgba(139, 44, 255, 0.16),
+            transparent 60%
+        );
+
+    border-top: 1px solid
+        rgba(139, 44, 255, 0.25);
+
+    border-bottom: 1px solid
+        rgba(139, 44, 255, 0.25);
+}
+
+
+.gallery-call > div {
+    max-width: 700px;
+}
+
+
+.gallery-call span,
+.booking-section span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--roxo-claro);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.gallery-call h2 {
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(2.5rem, 5vw, 4.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+}
+
+
+.gallery-call p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: var(--cinza);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.gallery-call a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    color: #ffffff;
+
+    border: 1px solid var(--roxo);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: var(--transicao);
+}
+
+
+.gallery-call a:hover {
+    background: var(--roxo);
+
+    box-shadow: var(--brilho-roxo);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SEÇÃO AGENDAMENTO
+   ========================================================= */
+
+.booking-section {
+    width: calc(100% - 80px);
+
+    max-width: 1320px;
+
+    margin: 0 auto;
+
+    padding: 120px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--preto);
+}
+
+
+.booking-section h2 {
+    margin-bottom: 35px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(2.8rem, 6vw, 5.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+}
+
+
+.booking-section a {
+    padding: 15px 35px;
+
+    color: #ffffff;
+
+    background: rgba(139, 44, 255, 0.08);
+
+    border: 1px solid var(--roxo);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 8px
+        rgba(139, 44, 255, 0.35);
+
+    transition: var(--transicao);
+}
+
+
+.booking-section a:hover {
+    background: var(--roxo);
+
+    box-shadow:
+        0 0 10px
+        rgba(139, 44, 255, 0.8),
+        0 0 25px
+        rgba(139, 44, 255, 0.4);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
 .rodape {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  color: white;
-  padding: 40px 0;
-  margin-top: 50px;
+    width: 100%;
+
+    padding: 65px 20px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    color: #ffffff;
+
+    background: #030303;
+
+    border-top: 1px solid
+        rgba(139, 44, 255, 0.3);
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
 }
 
 .social-icons img {
-  width: 70px;
-  height: 68px;
-  transition: 0.3s;
+    display: block;
+    object-fit: contain;
+
+    transition: var(--transicao);
 }
 
+/* WHATSAPP */
+#whatsappBtn img {
+    width: 105px;
+    height: 105px;
+}
+
+/* INSTAGRAM */
+.instagramBtn img {
+    width: 34px;
+    height: 34px;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
 .social-icons img:hover {
-  filter: drop-shadow(0 0 6px rgb(77, 45, 151))
-          drop-shadow(0 0 12px rgb(105, 54, 188))
-          drop-shadow(0 0 20px rgb(178, 100, 234));
+    transform: translateY(-5px);
 
-
-
-
+    filter:
+        drop-shadow(0 0 6px var(--roxo))
+        drop-shadow(0 0 15px var(--roxo-claro));
 }
 
-/* ===== RESPONSIVO ===== */
-
-@media (max-width: 900px) {
-  .sobre-container {
-    flex-direction: column;
+/* TEXTO DO RODAPÉ */
+.rodape p {
+    margin-top: 15px;
     text-align: center;
-
-    padding: 60px 20px;
-  }
-
-  .tatuador-foto {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-  }
-
-  .sobre-texto h1::after {
-    margin: 12px auto 0;
-  }
-
-  .sobre-texto p {
-    text-align: center;
-  }
 }
 
-/* ===== SOBRE ===== */
 
+
+/*====sobre====*/
 .sobre-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 30px;
-
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 60px;
-
-  color: #f5f5f5;
+  gap: 20px;
+  padding: 40px 0;
+  color: white;
+}
+.sobre-container h2 {
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
-.tatuador-foto {
-  width: 380px;
-  height: 500px;
-
-  object-fit: cover;
-
-  border-radius: 20px;
-  border: 3px solid #c49a4a;
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-
-  transition: 0.4s ease;
+.sobre-container p {
+  max-width: 600px;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: var(--cinza);
 }
 
-.tatuador-foto:hover {
-  transform: scale(1.03);
+.sobre-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  color: #ffffff;
+  border: 1px solid var(--roxo);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: var(--transicao);
 }
 
-.sobre-texto {
-  flex: 1;
+.sobre-container a:hover {
+  background: var(--roxo);
+  box-shadow: var(--brilho-roxo);
+  transform: translateY(-3px);
 }
 
-.sobre-texto h1 {
-  font-size: 3rem;
-  color: #c49a4a;
-
-  margin-bottom: 30px;
-
-  position: relative;
+.sobre-container img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--brilho-roxo);
 }
 
-.sobre-texto h1::after {
-  content: "";
+/* =========================================================
+   TEXTO DO RODAPÉ
+   ========================================================= */
 
-  display: block;
+.rodape > p {
+    color: var(--cinza-escuro);
 
-  width: 80px;
-  height: 4px;
+    font-size: 11px;
 
-  background: #c49a4a;
+    letter-spacing: 1px;
 
-  margin-top: 12px;
+    text-align: center;
 
-  border-radius: 10px;
-}
-
-.sobre-texto p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-
-  color: #d8d8d8;
-
-  margin-bottom: 20px;
-
-  text-align: justify;
+    text-transform: uppercase;
 }
 
 
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        width: calc(100% - 40px);
+
+        padding:
+            10px 25px;
+    }
 
 
-/* === TABLET === */
-@media (max-width: 1024px) {
+    nav {
+        gap: 30px;
+    }
 
-  .container {
-    gap: 40px;
-    padding: 18px;
-  }
 
-  .container img {
-    width: 100px;
-    height: 85px;
-  }
+    nav a {
+        font-size: 12px;
+    }
 
-  .container a {
-    font-size: 15px;
-  }
 
-  .reel-card video {
-    height: 260px;
-  }
+    .header-agendar {
+        padding:
+            11px 15px;
+
+        font-size: 10px;
+    }
+
+
+    .hero {
+        width: calc(100% - 40px);
+    }
+
+
+    .reels-section,
+    .gallery-call,
+    .booking-section {
+        width: calc(100% - 40px);
+    }
+
+
+    .reel-card video {
+        height: 310px;
+    }
 }
 
-/* === MOBILE === */
+
+/* =========================================================
+   TABLET MENOR
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .container {
+        min-height: 95px;
+
+        gap: 15px;
+    }
+
+
+    .logo-link img {
+        width: 80px;
+
+        height: 70px;
+    }
+
+
+    nav {
+        gap: 20px;
+    }
+
+
+    nav a {
+        font-size: 10px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .header-agendar {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: 570px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            clamp(2.8rem, 9vw, 5rem);
+    }
+
+
+    .reels-scroll {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .reel-card:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 420px;
+
+        justify-self: center;
+
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
-  .container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 5px;
-    max-width: 100%;
-    
-  }
+    header {
+        padding-top: 10px;
+    }
 
-  .container img {
-    width: 55px;
-    height: 55px;
-    flex-shrink: 0;
-  }
 
-  .container a {
-    font-size: 13px;
-    margin: 0 6px;
-    white-space: nowrap;
-  }
+    .container {
+        width: calc(100% - 20px);
 
-  /* REELS MOBILE */
-  .reels-scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
+        min-height: 72px;
 
-  .reel-card {
-    width: 85%;
-    max-width: 330px;
-    padding: 10px;
-  }
+        padding:
+            5px 10px;
 
-  .reel-card video {
-    height: 210px;
-  }
+        gap: 8px;
 
-  /* FOOTER */
-  .rodape {
-    gap: 20px;
-    padding: 30px 0;
-  }
+        border-radius: 14px;
+    }
+
+
+    .logo-link img {
+        width: 58px;
+
+        height: 55px;
+    }
+
+
+    nav {
+        gap: 10px;
+
+        margin-left: auto;
+    }
+
+
+    nav a {
+        font-size: 8px;
+
+        letter-spacing: 0.4px;
+    }
+
+
+    nav a::after {
+        bottom: -5px;
+
+        height: 1px;
+    }
+
+
+    .hero {
+        width: calc(100% - 20px);
+
+        min-height: 570px;
+
+        padding:
+            50px 15px 35px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            clamp(2.5rem, 13vw, 4rem);
+
+        letter-spacing: -2px;
+
+        line-height: 0.92;
+    }
+
+
+    .hero p {
+        max-width: 330px;
+
+        font-size: 10px;
+
+        line-height: 1.7;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .hero-buttons a {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+
+    .reels-section {
+        width: calc(100% - 20px);
+
+        padding:
+            55px 10px 70px;
+    }
+
+
+    .reels-section h2 {
+        font-size: 19px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.4;
+    }
+
+
+    .reels-scroll {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+    }
+
+
+    .reel-card,
+    .reel-card:last-child {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    .reel-card video {
+        height: 300px;
+    }
+
+
+    .gallery-call {
+        width: calc(100% - 20px);
+
+        min-height: 430px;
+
+        padding:
+            60px 20px;
+    }
+
+
+    .gallery-call h2 {
+        font-size: 2.5rem;
+
+        letter-spacing: -1px;
+    }
+
+
+    .gallery-call p {
+        font-size: 14px;
+    }
+
+
+    .booking-section {
+        width: calc(100% - 20px);
+
+        padding:
+            90px 20px;
+    }
+
+
+    .booking-section h2 {
+        font-size: 2.8rem;
+
+        letter-spacing: -1px;
+    }
+
+
+    .rodape {
+        padding:
+            50px 20px 25px;
+    }
+
+
+    .social-icons img {
+        width: 48px;
+
+        height: 48px;
+    }
+
+
+    .rodape > p {
+        font-size: 9px;
+
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   MOBILE MUITO PEQUENO
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        padding:
+            5px 7px;
+    }
+
+
+    .logo-link img {
+        width: 50px;
+
+        height: 48px;
+    }
+
+
+    nav {
+        gap: 7px;
+    }
+
+
+    nav a {
+        font-size: 7px;
+    }
+
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+
+    .reel-card video {
+        height: 270px;
+    }
 }
