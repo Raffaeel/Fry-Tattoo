@@ -1007,7 +1007,7 @@ nav a:hover::after {
 
 .social-icons {
 
-    grid-column: 2;
+  
 
     display: flex;
 
@@ -1015,7 +1015,7 @@ nav a:hover::after {
 
     justify-content: center;
 
-    gap: 5px;
+    gap: 3px;
 
     min-height: 140px;
 
@@ -1854,7 +1854,7 @@ nav a:hover::after {
 
     .rodape {
         width: 100%;
-
+         font-size: 12px;
         display: flex;
 
         flex-direction: column;
@@ -1863,8 +1863,8 @@ nav a:hover::after {
 
         justify-content: center;
 
-        gap: 10px;
-
+        gap: 45px;
+       
         padding:
             45px 15px 25px;
     }
@@ -1881,10 +1881,12 @@ nav a:hover::after {
 
     .social-icons {
         min-height: auto;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0;
 
-        gap: 5px;
+        gap: 4px;
 
         margin: 0;
     }
@@ -1922,24 +1924,25 @@ nav a:hover::after {
     }
 
 
-    .mandala {
-        width: 700px;
-
+   .mandala {
+        width: 55s0px;
         opacity: 0.9;
+        height: 380px;
+           
     }
-
 
     .mandala-esquerda {
         left: -330px;
 
-        bottom: -60px;
+        top: 125px;
+        bottom: auto !important;
     }
-
 
     .mandala-direita {
         right: -330px;
 
-        bottom: -60px;
+        top: 125px;
+        bottom: auto !important;
     }
 
 
@@ -1952,7 +1955,7 @@ nav a:hover::after {
 
 
     .sobre-container img {
-        margin-bottom: 25px;
+        margin-bottom: 22px;
     }
 
 
